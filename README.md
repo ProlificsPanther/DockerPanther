@@ -7,7 +7,7 @@ For more information and related downloads for Panther components, please visit 
 
   * Docker Environment
   
-# Switch branch to reach the Dockerfiles
+# Switch branch to access the Dockerfiles
 
 ## Contributing
 
