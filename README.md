@@ -1,7 +1,7 @@
 # What is Panther?
 Panther is a RAD platform that enables the development of mobile, web and desktop applications.
 
-For more information and related downloads for Panther components, please visit https://www.prolifics.com/jampanther-tools
+For more information on Panther components, please visit https://www.prolifics.com/jampanther-tools
 
 # Pre-Requisites:
 
