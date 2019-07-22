@@ -114,7 +114,7 @@ lynx localhost:8080/PantherDemo/PantherDemo/customer
 ## Issues
 If you face any kind of issues with this image, report them [here](https://github.com/ProlificsPanther/Docker-Panther/issues)
 
-## Contributing
+## Contribution
 
 You are invited to contribute new features, fixes, or updates, large or small; we are always thrilled to receive pull requests, and do our best to process them as fast as we can.
 
