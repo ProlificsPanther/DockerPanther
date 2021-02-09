@@ -25,8 +25,8 @@ RUN yum -y localinstall lynx.rpm
 RUN rm lynx.rpm
 
 #Unpacking Panther
-RUN mkdir -p /Apps/ProlificsContainer/prlstdwb552.06
-COPY prlstdwb552.06 /Apps/ProlificsContainer/prlstdwb552.06
+RUN mkdir -p /Apps/ProlificsContainer/prlstdwb553.07
+COPY prlstdwb553.07 /Apps/ProlificsContainer/prlstdwb553.07
 
 #Unpacking Panther and creating space for logs
 RUN mkdir -p /Apps/ProlificsContainer/TestMigration
@@ -50,7 +50,7 @@ COPY PantherDemo.ini ${HOME}/ini
 RUN chmod -R 0777 /home
 
 #Setting up environment for Panther Web
-ENV SMBASE=/Apps/ProlificsContainer/prlstdwb552.06
+ENV SMBASE=/Apps/ProlificsContainer/prlstdwb553.07
 ENV PATH=$SMBASE/util:$SMBASE/config:${CATALINA_HOME}/bin:$SMBASE/servlet:$PATH
 ENV SMPATH=$SMBASE/util:$SMBASE/config
 ENV LM_LICENSE_FILE=$SMBASE/licenses/license.dat
@@ -74,4 +74,4 @@ ENV SMUSER=proweb
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
-#Copyright © 2019 Prolifics Inc. All Rights Reserved.
+#Copyright © 2021 Prolifics Inc. All Rights Reserved.
