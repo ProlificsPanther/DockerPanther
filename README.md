@@ -28,7 +28,7 @@ For more information on Panther components, please visit https://www.prolifics.c
 
  * JDK 1.8
  * Red Hat
- * Panther Web 552.06 (License Inclusive)
+ * Panther Web 553.07 (License Inclusive)
  * Tomcat (Completely configured)
  * Panther Servlet
  * ini file for Panther Web (Completely configured)
