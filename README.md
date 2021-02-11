@@ -8,13 +8,13 @@ For more information on Panther components, please visit https://www.prolifics.c
 
 # Prerequisites (Required):
 
-  * Docker Environment
+  * Install Docker Engine from here: https://docs.docker.com/get-docker/ 
   * Panther 5.5*
-  * Download jdk(select version which is suitable, this dockerfile has 8u192) from here: https://www.oracle.com/technetwork/java/javase/downloads/java-archive-javase8-2177648.html
-  * Redhat system
-  * Tomcat is zipped(please unzip it)
-  * TestMigration is zipped(please unzip it)
-  * lynx.rpm (character mode browser, suited for linux systems)
+  * JDK from here: https://www.oracle.com/technetwork/java/javase/downloads/java-archive-javase8-2177648.html
+  * Linux Server(Redhat, Ubuntu, CentOS, Fedora etc.)
+  * Tomcat.zip(included)
+  * TestMigration.zip(included)
+  * lynx.rpm (character mode browser, suited for Linux systems)
 
   * docker-entrypoint.sh ( keeps catalina and Panther App running)
   
@@ -29,9 +29,9 @@ For more information on Panther components, please visit https://www.prolifics.c
  * JDK 1.8
  * Red Hat
  * Panther Web 553.07 (License Inclusive)
- * Tomcat (Completely configured)
+ * Tomcat (Configured)
  * Panther Servlet
- * ini file for Panther Web (Completely configured)
+ * PantherDemo.ini file for Panther Web (Configured)
  
  # How to use this Image
    This image is designed to be used in your Panther Web Enviroment in your Redhat server. Installing a Panther Web Docker image should take less than 10 minutes to setup. Once complete you will be able run our sample testcases.
