@@ -5,7 +5,7 @@ For more information on Panther components, please visit https://www.prolifics.c
 ### Usage
 * Panther Web 5.5*
 
-# Prerequisites (Required):
+# Prerequisites: (Required)
   * Install Docker Engine from  https://docs.docker.com/get-docker/ 
   
   Provided in Container
@@ -17,10 +17,11 @@ For more information on Panther components, please visit https://www.prolifics.c
   * lynx.rpm (character mode browser, suited for Linux systems)
   * docker-entrypoint.sh ( keeps catalina and Panther App running)
   
- # Prerequisite (Optional)
+ # Prerequisites: (Optional)
    Enable port 8080 from your host machine so that you can check your URL outside the host machine also.
     
- # Download the Panther image using the following command:
+ # Downloading the Panther Docker image::
+   Use the command  below
    docker pull prolificspanther/pantherweb  
    
  # Contents of the container:
@@ -32,7 +33,7 @@ For more information on Panther components, please visit https://www.prolifics.c
  * PantherDemo.ini file for Panther Web (Configured)
  
  # How to use this Image
-   This image is designed to be used in your Panther Web Enviroment in your Redhat server. Installing a Panther Web Docker image should take less than 10 minutes to setup. Once complete you will be able run our sample testcases.
+   This image is designed to be used in your Panther Web Enviroment in your Redhat server. Installing a Panther Web Docker image should take less than 10 minutes to setup. Once    complete you will be able run our sample testcases.
  
 * Creating the container:
   docker run --name=pantherweb -p8080:8080 -d prolificspanther/pantherweb
