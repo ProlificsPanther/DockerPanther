@@ -11,7 +11,7 @@ For more information on Panther components, please visit https://www.prolifics.c
   Provided in Container
   * Panther 5.5*
   * JDK : https://www.oracle.com/technetwork/java/javase/downloads/java-archive-javase8-2177648.html
-  * Linux Server(Red Hat, Ubuntu, CentOS, Fedora etc.)
+  * Linux Server(Red Hat)
   * Tomcat.zip(included)
   * TestMigration.zip(included)
   * lynx.rpm (character mode browser, suited for Linux systems)
