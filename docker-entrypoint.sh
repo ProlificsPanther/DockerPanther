@@ -1,5 +1,3 @@
 #!/bin/bash
 
-monitor -start PantherDemo
-
-exec catalina.sh run
+tail -f /dev/null
