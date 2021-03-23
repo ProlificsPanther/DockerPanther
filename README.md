@@ -6,7 +6,7 @@ For more information on Panther components, please visit https://www.prolifics.c
 Docker is a tool designed to make it easier to create, deploy, and run applications by using containers. Containers allow a developer to package up an application with all of the parts it needs, such as libraries and other dependencies, and deploy it as one package.
 
 # What this repository contains
-This repository contains two branches ; 
+This repository contains two branches ; PantherClient, PantherWeb
 
 # Panther with Docker
 Conteinerize Panther client as well as web application that makes easy to develop and deploy. It will also helpful to make it available globally on Docker Hub(hub.docker.com). Our Sample Docker Panther images for Panther Client and Panther Web are avialble on Docker hub. Just run a Docker.
