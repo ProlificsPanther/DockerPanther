@@ -1,6 +1,5 @@
-# What is Panther?
-Panther is a RAD platform that enables the development of mobile, web and desktop applications.
-For more information on Panther components, please visit https://www.prolifics.com/jampanther-tools
+# Dockerize Panther client
+A sample dockerfile to dockerize Panther client application. It will help you as a refereance to dockerize your Panther client application. We are also providing built sample docker panther image and can be pull directly using docker pull command from [Docker Hub](https://hub.docker.com/repository/docker/prolificspanther/pantherclient).  
 
 ### Usage
 * Panther Web 5.5*
@@ -10,72 +9,28 @@ For more information on Panther components, please visit https://www.prolifics.c
   
   Provided in Container
   * Panther 5.5*
-  * JDK : https://www.oracle.com/technetwork/java/javase/downloads/java-archive-javase8-2177648.html
-  * Linux Server(Red Hat)
-  * Tomcat.zip(included)
-  * TestMigration.zip(included)
-  * lynx.rpm (character mode browser, suited for Linux systems)
-  * docker-entrypoint.sh ( keeps catalina and Panther App running)
-  
- # Prerequisites: (Optional)
-   Enable port 8080 from your host machine so that you can check your URL outside the host machine also.
+  * docker-entrypoint.sh (Panther App running)
     
  # Downloading the Panther Docker image::
    Use the command  below
    docker pull prolificspanther/pantherweb  
    
  # Contents of the container:
- * JDK 1.8
- * Red Hat
+ * JDK
+ * Ubuntu
  * Panther Web 553.07 (License Inclusive)
- * Tomcat (Configured)
- * Panther Servlet
- * PantherDemo.ini file for Panther Web (Configured)
  
  # How to use this Image
-   This image is designed to be used in your Panther Web Enviroment in your Red Hat server. Installing a Panther Web Docker image should take less than 10 minutes to setup. Once    complete you will be able run our sample testcases.
+   This image is designed to run Panther client in Ubuntu based container. 
  
 * Creating the container:
-  docker run --name=pantherweb -p8080:8080 -d prolificspanther/pantherweb
+  docker run --name=pantherclient -d prolificspanther/pantherclient
 
-* Enter the container(To be used in non-UI base OS & for migrating the screens):
-  docker exec -ti pantherweb bash
+* Enter the container:
+  docker exec -ti pantherclient bash
 
 * Test our Samples(already packed in image):
   
-  ### For Non-UI base:
-    * Run prodev: "prodev" (Without Quotes)
-  * Run proweb:
-    lynx localhost:8080/PantherDemo/login
-  OR
-  lynx localhost:8080/PantherDemo/orders
-  OR
-  lynx localhost:8080/PantherDemo/customer
-  
- * Run the migration utility(Do this from a separate maximized Terminal) : java -jar migration.jar
-
- * Please access the following URL from an OS with UI enabled:
-
-(IP):8080/PantherDemo/PantherDemo/(screen_name_you_ran_the_migration_utility_on)
-
-Note: This will only work if you've enabled port 8080 on your host system to communicate externally.
-
-### For base OS with UI:
-* For prodev: Just run "prodev" (without double quotes)
-* For accessing the Panther screens using proweb:
-
-  Call the URL from the browser:
-  localhost:8080/PantherDemo/PantherDemo/login
-  OR
-  localhost:8080/PantherDemo/PantherDemo/orders
-  OR
-  localhost:8080/PantherDemo/PantherDemo/customer
-
- * Run the migration utility(Do this from a Terminal):
-   java -jar migration.jar
-
- Recall the URL with the screen name that you ran the migration utility on the browser to see the changes
-
 # To access the image from Openshift:
 1) Create a Project
 2) Click on Deploy an image
@@ -85,13 +40,6 @@ Note: This will only work if you've enabled port 8080 on your host system to com
 6) Run the command( to test prodev):
 Run the command "prodev"
  
-7) Run the command( to test proweb):
-lynx localhost:8080/PantherDemo/PantherDemo/login
-OR
-lynx localhost:8080/PantherDemo/PantherDemo/orders
-OR
-lynx localhost:8080/PantherDemo/PantherDemo/customer
-
 ## Issues
 If you face any kind of issues with this image, report them [here](https://github.com/ProlificsPanther/Docker-Panther/issues)
 
