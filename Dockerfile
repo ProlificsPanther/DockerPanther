@@ -1,28 +1,44 @@
 #Setting the base OS
-FROM rhel
+FROM ubuntu
 
 #Name of Creator
 LABEL Author="Panther Support"
 LABEL Corporation="Prolifics Inc."
 
-#Libraries required for Panther but doesn't come pre-packed with RedHat 7
-RUN yum -y install openmotif
 
-#Install LibXpm.so.4 which isn't coming packed with openmotif latest
-COPY libXpm.so.4 /usr/lib64
+#Setup lib
+WORKDIR /usr/lib64
+RUN apt-get update  &&\   
+    apt-get install libjpeg62 
+RUN apt-get install -y libxm4
 
 #Setting up JDK
 RUN mkdir -p /Apps/ProlificsContainer
 WORKDIR /Apps/ProlificsContainer
-COPY jdk-8u192-linux-x64.rpm .
-RUN rpm -ivh jdk-8u192-linux-x64.rpm
-RUN rm jdk-8u192-linux-x64.rpm
-ENV SMJAVALIBRARY=/usr/java/jdk1.8.0_192-amd64/jre/lib/amd64/server/libjvm.so
+# Install OpenJDK-8
+RUN apt-get update && \
+    apt-get install -y openjdk-8-jdk && \
+    apt-get install -y ant && \
+    apt-get clean;
 
-#Copy and install Lynx
-COPY lynx.rpm .
-RUN yum -y localinstall lynx.rpm
-RUN rm lynx.rpm
+# Fix certificate issues
+RUN apt-get update && \
+    apt-get install ca-certificates-java && \
+    apt-get clean && \
+    update-ca-certificates -f;
+ENV SMJAVALIBRARY=/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/server/libjvm.so
+
+
+# Setup JAVA_HOME -- useful for docker commandline
+ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64/
+RUN export JAVA_HOME
+ENV SMJAVALIBRARY=/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/server/libjvm.so
+
+#Configuring Panther Servlet
+RUN useradd -ms /bin/bash prolifics
+ENV HOME=/home/prolifics
+RUN mkdir -p ${HOME}/ini
+RUN chmod -R 0777 /home
 
 #Unpacking Panther
 RUN mkdir -p /Apps/ProlificsContainer/prlstdwb553.07
@@ -30,28 +46,16 @@ COPY prlstdwb553.07 /Apps/ProlificsContainer/prlstdwb553.07
 
 #Unpacking Panther and creating space for logs
 RUN mkdir -p /Apps/ProlificsContainer/TestMigration
-COPY migration /Apps/ProlificsContainer/TestMigration
-RUN mkdir -p /Apps/ProlificsContainer/TestMigration/UI
-COPY UI /Apps/ProlificsContainer/TestMigration/UI
+# COPY migration /Apps/ProlificsContainer/TestMigration
+# RUN mkdir -p /Apps/ProlificsContainer/TestMigration/UI
+# COPY UI /Apps/ProlificsContainer/TestMigration/UI
 RUN mkdir -p /Apps/ProlificsContainer/TestMigration/error
-RUN mkdir -p /Apps/ProlificsContainer/TestMigration/web
+# RUN mkdir -p /Apps/ProlificsContainer/TestMigration/web
 
-#Setting and installing Apache Tomcat
-RUN mkdir -p /Apps/ProlificsContainer/Tomcat
-ENV CATALINA_HOME=/Apps/ProlificsContainer/Tomcat
-COPY apache-tomcat-8.5.33 /Apps/ProlificsContainer/Tomcat
-
-#Configuring Panther Servlet
-RUN useradd -ms /bin/bash proweb
-ENV HOME=/home/proweb
-RUN mkdir -p ${HOME}/ini
-COPY PantherDemo.war ${CATALINA_HOME}/webapps
-COPY PantherDemo.ini ${HOME}/ini
-RUN chmod -R 0777 /home
 
 #Setting up environment for Panther Web
 ENV SMBASE=/Apps/ProlificsContainer/prlstdwb553.07
-ENV PATH=$SMBASE/util:$SMBASE/config:${CATALINA_HOME}/bin:$SMBASE/servlet:$PATH
+ENV PATH=$SMBASE/util:$SMBASE/config:${CATALINA_HOME}/bin
 ENV SMPATH=$SMBASE/util:$SMBASE/config
 ENV LM_LICENSE_FILE=$SMBASE/licenses/license.dat
 ENV LD_LIBRARY_PATH=$SMBASE/lib:/usr/lib64:/lib64
@@ -69,8 +73,8 @@ WORKDIR /Apps/ProlificsContainer/TestMigration
 EXPOSE 8080
 
 #Setting the user
-USER proweb
-ENV SMUSER=proweb
+USER prolifics
+ENV SMUSER=prolifics
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
