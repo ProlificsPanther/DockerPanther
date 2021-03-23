@@ -15,8 +15,6 @@ Conteinerize Panther client as well as web application that makes easy to develo
 
 ![](Docker.png)
 
-# How to access and run Panther Docker Containers
-
 
 ## Issues
 If you face any kind of issues with this image, report them [here](https://github.com/ProlificsPanther/Docker-Panther/issues)
