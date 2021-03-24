@@ -13,7 +13,8 @@ A sample dockerfile to dockerize Panther client application. It will help you as
     
  # Downloading the Panther Docker image::
    Use the command  below
-   docker pull prolificspanther/pantherweb  
+   
+  docker pull prolificspanther/pantherclient  
    
  # Contents of the container:
  * JDK
