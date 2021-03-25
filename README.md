@@ -1,5 +1,5 @@
 # What is Panther?
-Panther is a RAD platform that enables the development of mobile, web and desktop applications.
+Panther is a development toolthat enables the development of mobile, web and desktop applications.
 For more information on Panther components, please visit https://www.prolifics.com/jampanther-tools
 
 # What is Docker?
