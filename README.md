@@ -6,6 +6,7 @@ For more information on Panther components, please visit https://www.prolifics.c
 Docker is a tool designed to make it easier to create, deploy, and run applications by using containers. Containers allow a developer to package up an application with all of the parts it needs, such as libraries and other dependencies, and deploy it as one package.
 
 [Benefits of Panther Docker application(video)](https://www.youtube.com/watch?v=VLib1p-3i5Q&list=PLqs5lOxsEMidwKXCOec5d_f6UXsZtuYhf&index=16)
+
 [Panther Docker Use Cases(video)] (https://www.youtube.com/watch?v=Vfik6KLelbQ&list=PLqs5lOxsEMidwKXCOec5d_f6UXsZtuYhf&index=14)
 
 
