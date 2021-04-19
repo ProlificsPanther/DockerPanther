@@ -7,8 +7,7 @@ Docker is a tool designed to make it easier to create, deploy, and run applicati
 
 [Benefits of Panther Docker application(video)](https://www.youtube.com/watch?v=VLib1p-3i5Q&list=PLqs5lOxsEMidwKXCOec5d_f6UXsZtuYhf&index=16)
 
-[Panther Docker Use Cases(video)] (https://www.youtube.com/watch?v=Vfik6KLelbQ&list=PLqs5lOxsEMidwKXCOec5d_f6UXsZtuYhf&index=14)
-
+[Panther Docker Use Cases(video)](https://www.youtube.com/watch?v=Vfik6KLelbQ&list=PLqs5lOxsEMidwKXCOec5d_f6UXsZtuYhf&index=14)
 
 # What this repository contains
 This repository contains 2 branches; Panther Client &  Panther Web Docker files. The Panther Client Docker file consist of a sample dockerfile to dockerize your Panther Client application. The Panther Web  Docker file consists of a sample dockerfile to dockerize Panther Web application. 
