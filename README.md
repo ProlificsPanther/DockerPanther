@@ -10,7 +10,7 @@ Docker is a tool designed to make it easier to create, deploy, and run applicati
 [Panther Docker Use Cases(video)](https://www.youtube.com/watch?v=Vfik6KLelbQ&list=PLqs5lOxsEMidwKXCOec5d_f6UXsZtuYhf&index=14)
 
 # What this repository contains
-This repository contains 2 branches; Panther Client &  Panther Web Docker files. The Panther Client Docker file consist of a sample dockerfile to dockerize your Panther Client application. The Panther Web  Docker file consists of a sample dockerfile to dockerize Panther Web application. 
+This repository contains one branch; docker-panther-trial. The docker-panther-trial consist of a sample dockerfile to dockerize sample limited file Panther trial edition. This limited file trial edition of docker-panther image to run a panther inside docker container to run panther in motif and character mode. Also to run a web application of panther.
 
 ![](BranchInfo.PNG)
 
