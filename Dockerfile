@@ -8,6 +8,7 @@ LABEL Corporation="Prolifics Inc."
 # Setting up JDK
 RUN mkdir -p /Apps/ProlificsContainer
 WORKDIR /Apps/ProlificsContainer
+
 # Install OpenJDK-8
 RUN apt-get update && \
     apt-get install -y openjdk-8-jdk && \
@@ -20,17 +21,19 @@ RUN apt-get update && \
     apt-get clean && \
     update-ca-certificates -f;
 ENV SMJAVALIBRARY=/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/server/libjvm.so
-# install libjpeg.so.62
+
+# Install libjpeg.so.62
 RUN apt-get -y update
 RUN apt-get install libjpeg62
 
-# install xauth
+# Install xauth
 RUN apt-get -y update
 RUN apt-get -y install xauth
 
 #  install openmotif
 RUN apt-get -y update
 RUN apt-get install -y libmotif-dev
+
 # install openssh
 RUN apt-get -y update
 RUN apt-get -y install openssh-server
@@ -39,7 +42,6 @@ RUN chmod -R 0777 /etc/ssh
 # Setup JAVA_HOME -- useful for docker commandline
 ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64/
 RUN export JAVA_HOME
-#ENV SMJAVALIBRARY=/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/server/libjvm.so
 
 # Unpacking Panther
 RUN mkdir -p /Apps/ProlificsContainer/prlstdwb553.07
@@ -48,7 +50,6 @@ COPY prlstdwb553.07 /Apps/ProlificsContainer/prlstdwb553.07
 # Unpacking Panther and creating space for logs
 RUN mkdir -p /Apps/ProlificsContainer/PantherTest
 RUN mkdir -p /Apps/ProlificsContainer/PantherTest/error
-#RUN mkdir -p /Apps/ProlificsContainer/TestMigration/web
 
 # Setting and installing Apache Tomcat
 RUN mkdir -p /Apps/ProlificsContainer/Tomcat
@@ -70,7 +71,6 @@ ENV PATH=$SMBASE/util:$SMBASE/config:${CATALINA_HOME}/bin:$SMBASE/servlet:$PATH
 ENV SMPATH=$SMBASE/util:$SMBASE/config
 ENV SMVARS=$SMBASE/config/smvars.bin
 ENV SMFLIBS=$SMBASE/util/mgmt.lib:$SMBASE/util/screens.lib
-# ENV LM_LICENSE_FILE=$SMBASE/licenses/license.dat
 ENV LD_LIBRARY_PATH=$SMBASE/lib:/usr/lib64:/lib64:/usr/lib/x86_64-linux-gnu
 
 # Starting the app and keeping the container running
