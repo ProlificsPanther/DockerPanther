@@ -3,6 +3,7 @@ The Docker file can be used to dockerize  your limited files Panther trial editi
 
 ### Usage
 * Panther Web 5.53
+* Base OS: Ubuntu 
 
 # Prerequisites: (Required)
   * Install Docker Engine from  https://docs.docker.com/get-docker/ 
