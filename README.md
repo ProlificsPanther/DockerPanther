@@ -22,7 +22,7 @@ The Docker file can be used to dockerize  your limited files Panther trial editi
    docker push prolificspanther/docker-panther-trial
   
  # Contents of the container:
- * JDK 8
+ * OpenJDK 8
  * Ubuntu 20.04
  * Panther Web 5.53.07 
  * Tomcat (Configured)
