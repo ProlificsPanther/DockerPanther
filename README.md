@@ -9,7 +9,7 @@ The Docker file can be used to dockerize  your limited files Panther trial editi
   
   Provided in Container
   * Panther 5.53
-  * JDK 8
+  * OpenJDK 8
   * Linux Server(Ubuntu 20.04)
   * Tomcat.zip(included)
   * docker-entrypoint.sh (keeps Catalina and Panther App running)
