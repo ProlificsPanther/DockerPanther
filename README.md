@@ -38,11 +38,11 @@ You should have a valid Panther license on the host machine. Please contact supp
 
 Step-1: `docker pull prolificspanther/docker-panther-trial`
 
-Step-2: `docker run --name=panther -v <path of license folder on host  machine>:/Apps/ProlificsContainer/PantherTest/License -p8080:8080 -d prolificspanther/docker-panther-trial`
+Step-2: `docker run --name=panther -v <path of license folder on host  machine>:/Apps/ProlificsContainer/prlstdwb553.07/licenses -p8080:8080 -d prolificspanther/docker-panther-trial`
 
 Step-3: `docker exec -ti panther bash`
 
-Step-4: Set the license file using command `export LM_LICENSE_FILE=/Apps/ProlificsContainer/PantherTest/License/license.dat`
+Step-4: Set the license file using command `export LM_LICENSE_FILE=/Apps/ProlificsContainer/prlstdwb553.07/licenses/license.dat`
 
 Step-5: `Open the Panther Editor using the command > prodev`
 
@@ -54,8 +54,7 @@ Step-6: `To Run a sample Panther client application use command > prorun mgmt (N
 
 Step-1: This step will same as  character mode
  
-Step-2: `docker run --name=panther -ti --net=host -e DISPLAY -v /tmp/.X11-unix -v <path of license folder on host  machine>:/Apps/ProlificsContainer/PantherTest
-/License -d prolificspanther/docker-panther-trial`
+Step-2: `docker run --name=panther -ti --net=host -e DISPLAY -v /tmp/.X11-unix -v <path of license folder on host  machine>://Apps/ProlificsContainer/prlstdwb553.07/licenses -d prolificspanther/docker-panther-trial`
 
 Step-3: `Enter command>xauth list
             It will display MIT-MAGIC-COOKIE list as shown in example below. Just copy any one of them.
@@ -63,7 +62,7 @@ Step-3: `Enter command>xauth list
 
 Step-4: `docker exec -ti panther bash`
 
-Step-5: Set the license file using command `export LM_LICENSE_FILE=/Apps/ProlificsContainer/PantherTest/License/license.dat`
+Step-5: Set the license file using command `export LM_LICENSE_FILE=/Apps/ProlificsContainer/prlstdwb553.07/licenses/license.dat`
 
 Step-6: `Enter command> xauth add < paste MIT- MAGIC-COOKIE  that we copied before> We can verify using xauth list. It will show the same cookie that we just added.`
 
@@ -91,7 +90,7 @@ Step-6: Click  on Run button configuration dialogue box. It will create and star
 
 Step-7: Select running  container and click on CLI option. It will open a CLI terminal terminal to run Panther in character mode.
 
-Step-8: Set the license file using command `export LM_LICENSE_FILE=/Apps/ProlificsContainer/PantherTest/License/license.dat`
+Step-8: Set the license file using command `export LM_LICENSE_FILE=/Apps/ProlificsContainer/prlstdwb553.07/licenses/license.dat`
 
 Step-9: To run prodev enter command> prodev on CLI terminal and to run prorun with sample app by enter the command>prorun mgmt(Name of panther screen).
 
