@@ -15,7 +15,7 @@ This repository contains one branch; docker-panther-trial. The docker-panther-tr
 ![](BranchInfo.PNG)
 
 # Panther with Docker
-Containerize your Panther applications to make it easier to develop and deploy them. You can also make it available globally on Docker Hub(hub.docker.com). Our sample Docker Panther images for Panther Client and Panther Web are available on Docker hub. Just run the docker pull command.
+Containerize your Panther applications to make it easier to develop and deploy them. You can also make it available globally on [Docker Hub](https://hub.docker.com/repository/docker/prolificspanther/docker-panther-trial). Our sample Docker Panther images for Panther Client and Panther Web are available on Docker hub. Just run the docker pull command.
 
 ![](Docker.png)
 
