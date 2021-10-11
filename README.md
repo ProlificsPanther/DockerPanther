@@ -132,6 +132,4 @@ You are invited to contribute new features, fixes, or updates, large or small; w
 
 Before you begin to code, we recommend discussing your plans through a [GitHub issue](https://github.com/ProlificsPanther/Docker-Panther/issues), especially for more ambitious contributions. This gives other contributors a chance to point you in the right direction, give you feedback on your design, and help you find out if someone else is working on the same thing.
 
-How to set up a Panther Servlet Web Application? [Click Here](https://github.com/ProlificsPanther/PantherWeb/releases "Named link title")
-
 Read our Documentation [here](https://docs.prolifics.com)
