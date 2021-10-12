@@ -22,6 +22,7 @@ Containerize your Panther applications to make it easier to develop and deploy t
 
 ## License
 For a 45-day license or a fully licensed Panther port, contact support@prolifics.com
+
 [View](https://github.com/ProlificsPanther/DockerPanther/blob/master/SoftwareLicenseAgreement.pdf) license information for the software contained in this image.
 
 As with all Docker images, these likely also contain other software which may be under other licenses (such as Bash, etc from the base distribution, along with any direct or indirect dependencies of the primary software being contained).
