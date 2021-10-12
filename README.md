@@ -3,15 +3,16 @@ Panther is a development tool that enables the development of mobile, web and de
 For more information on Panther components, please visit https://www.prolifics.com/jampanther-tools
 
 # What is Docker?
-Docker is a tool designed to make it easier to create, deploy, and run application using containers. Containers allow a developer to package up an application with all of the parts it needs, such as libraries and other dependencies, and deploy it as one package.
+Docker is an open platform that makes it easier to create, deploy, and run applications. Applications run in containers and contain everything needed to run the application, so you do not need to rely on what is currently installed on the host.
 
 [Benefits of Panther Docker application(video)](https://www.youtube.com/watch?v=VLib1p-3i5Q&list=PLqs5lOxsEMidwKXCOec5d_f6UXsZtuYhf&index=16)
 
 [Panther Docker Use Cases(video)](https://www.youtube.com/watch?v=Vfik6KLelbQ&list=PLqs5lOxsEMidwKXCOec5d_f6UXsZtuYhf&index=14)
 
 # What this repository contains
-This repository contains one branch; docker-panther-trial. The docker-panther-trial consist of a sample dockerfile to dockerize sample limited file Panther trial edition. This limited file trial edition of docker-panther image to run a panther inside docker container to run panther in motif and character mode. Also to run a web application of panther.
-
+This repository contains one branch; docker-panther-trial which consists of a sample dockerfile from which you can run Panther Motif, Panther Character Mode or Panther Web inside a Docker Container. These docker instances of Panther are limited and do not contain all Panther features. You may request a 45 day license file from support@prolifics.com.
+ 
+# What this repository contains
 ![](BranchInfo.PNG)
 
 # Panther with Docker
@@ -20,9 +21,7 @@ Containerize your Panther applications to make it easier to develop and deploy t
 ![](Docker.png)
 
 ## License
-
-For Panther Cloud License, contact support@prolifics.com
-
+For a 45-day license or a fully licensed Panther port, contact support@prolifics.com
 [View](https://github.com/ProlificsPanther/DockerPanther/blob/master/SoftwareLicenseAgreement.pdf) license information for the software contained in this image.
 
 As with all Docker images, these likely also contain other software which may be under other licenses (such as Bash, etc from the base distribution, along with any direct or indirect dependencies of the primary software being contained).
