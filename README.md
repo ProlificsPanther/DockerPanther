@@ -3,7 +3,7 @@ Panther is a development tool that enables the development of mobile, web and de
 For more information on Panther components, please visit https://www.prolifics.com/jampanther-tools
 
 # What is Docker?
-Docker is a tool designed to make it easier to create, deploy, and run applications by using containers. Containers allow a developer to package up an application with all of the parts it needs, such as libraries and other dependencies, and deploy it as one package.
+Docker is a tool designed to make it easier to create, deploy, and run application using containers. Containers allow a developer to package up an application with all of the parts it needs, such as libraries and other dependencies, and deploy it as one package.
 
 [Benefits of Panther Docker application(video)](https://www.youtube.com/watch?v=VLib1p-3i5Q&list=PLqs5lOxsEMidwKXCOec5d_f6UXsZtuYhf&index=16)
 
