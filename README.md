@@ -70,7 +70,7 @@ Step-7: `Open the Panther Editor in motif using the command>prodev_motif`
 
 Step 8: `To Run a sample Panther client application in motif use command > prorun_motif mgmt (Name of Panther screen)`  
 
-### Panther on Docker Desktop for Windows:
+### Panther on Docker Desktop for Windows
 
 **Perquisites:** To run Panther on Windows using Docker Desktop. It will require to install Docker Desktop with WSL(it will install with Docker Desktop) on Windows 10.
 Please follow the link to setup [Docker Desktop](https://docs.docker.com/desktop/windows/install/)
@@ -96,7 +96,7 @@ Step-9: To run prodev enter command> prodev on CLI terminal and to run prorun wi
 
 Step-:10- To run sample pantherweb application on host browser. Click on "Open in browser". it will redirect to windows default browser. Add URL /PantherDemo/PantherDemo/login.
 
-# To access the image from OpenShift:
+# To access the image from OpenShift
 
 Step-1: Create a Project
 
