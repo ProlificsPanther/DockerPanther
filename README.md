@@ -5,9 +5,7 @@ For more information on Panther components, please visit https://www.prolifics.c
 # What is Docker?
 Docker is an open platform that makes it easier to create, deploy, and run applications. Applications run in containers and contain everything needed to run the application, so you do not need to rely on what is currently installed on the host.
 
-[Benefits of Panther Docker application(video)](https://www.youtube.com/watch?v=VLib1p-3i5Q&list=PLqs5lOxsEMidwKXCOec5d_f6UXsZtuYhf&index=16)
-
-[Panther Docker Use Cases(video)](https://www.youtube.com/watch?v=Vfik6KLelbQ&list=PLqs5lOxsEMidwKXCOec5d_f6UXsZtuYhf&index=14)
+[Docker Playlist](https://www.youtube.com/playlist?list=PLqs5lOxsEMidwKXCOec5d_f6UXsZtuYhf)
 
 # What this repository contains
 This repository contains one branch; docker-panther-trial which consists of a sample dockerfile from which you can run Panther Motif, Panther Character Mode or Panther Web inside a Docker Container. These docker instances of Panther are limited and do not contain all Panther features. You may request a 45 day license file from support@prolifics.com.
