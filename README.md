@@ -38,14 +38,14 @@ You should have a valid Panther license on the host machine. Please contact supp
 
 **Prerequisites:** Install Docker Desktop with WSL(Installed with Docker Desktop) on Windows 10. Please follow the link to setup [Docker Desktop](https://docs.docker.com/desktop/windows/install/)
 
-Step-1: Open command prompt or Windows PowerShell terminal to pull a docker-panther-trial image using command:
+Step-1: Open command prompt or Windows PowerShell terminal to pull the docker-panther-trial image. Use command:
  `docker pull prolificspanther/docker-panther-trial`
 
-Step-2: Open Docker Desktop application using shortcut icon on Windows Desktop and it should show the docker-panther-trial image in image section.
+Step-2: Open the Docker Desktop application using the shortcut icon on Windows Desktop. It should display the docker-panther-trial image in image section.
 
-Step-3: To create and run a container click on "Run" button on selecting docker-panther-trial image in image section. It will open a configuration dialogue box.
+Step-3: To create and run a container click the "Run" button.A configuration dialogue box will open.
 
-Step-4:  Name a Container in name section, Local host port to run pantherweb on host machine, 
+Step-4:  Enter a values in the name section as well as a local host port to run pantherweb on host machine, 
 
 Step-5: In volume section of dialogue box, we can share a host directory with a container by sharing path of local directory in host path field. Share location of license file on host machine and share location(/Apps/ProlificsContainer/PantherTest/License) to get the directory inside a container in Container path field.
 
