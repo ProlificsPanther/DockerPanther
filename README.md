@@ -30,50 +30,13 @@ The Docker file can be used to dockerize  your limited files Panther trial editi
  * Panther Servlet
  * PantherDemo.ini file for Panther Web (Configured)
  
- # How to use this docker-panther-trial
+ # How to use docker-panther-trial
 
 You should have a valid Panther license on the host machine. Please contact support@prolifics.com for a temporary license. Your Docker Container must be able to access that license file. Instructions provided below
 
-### Panther in character mode
-
-Step-1: `docker pull prolificspanther/docker-panther-trial`
-
-Step-2: `docker run --name=panther -v <path of license folder on host  machine>:/Apps/ProlificsContainer/prlstdwb553.07/licenses -p8080:8080 -d prolificspanther/docker-panther-trial`
-
-Step-3: `docker exec -ti panther bash`
-
-Step-4: Set the license file using command `export LM_LICENSE_FILE=/Apps/ProlificsContainer/prlstdwb553.07/licenses/license.dat`
-
-Step-5: `Open the Panther Editor using the command > prodev`
-
-Step-6: `To Run a sample Panther client application use command > prorun mgmt (Name of Panther screen) `           
-
-### Panther in motif mode
-
-**Perquisites:** To run panther in motif mode. We have to make sure to install (https://x.cygwin.com/) and start the X Server on your windows machine. Also, connect the Linux machine by enabling SSH>X11(Enable X11 forward and enter host machine IP:0.0) using putty. 
-
-Step-1: This step will same as  character mode
- 
-Step-2: `docker run --name=panther -ti --net=host -e DISPLAY -v /tmp/.X11-unix -v <path of license folder on host  machine>://Apps/ProlificsContainer/prlstdwb553.07/licenses -d prolificspanther/docker-panther-trial`
-
-Step-3: `Enter command>xauth list
-            It will display MIT-MAGIC-COOKIE list as shown in example below. Just copy any one of them.
-            Example: ip-your ip/unix:10  MIT-MAGIC-COOKIE-1  83cce042f30c980a97e6799713e9e3f2`
-
-Step-4: `docker exec -ti panther bash`
-
-Step-5: Set the license file using command `export LM_LICENSE_FILE=/Apps/ProlificsContainer/prlstdwb553.07/licenses/license.dat`
-
-Step-6: `Enter command> xauth add < paste MIT- MAGIC-COOKIE  that we copied before> We can verify using xauth list. It will show the same cookie that we just added.`
-
-Step-7: `Open the Panther Editor in motif using the command>prodev_motif` 
-
-Step 8: `To Run a sample Panther client application in motif use command > prorun_motif mgmt (Name of Panther screen)`  
-
 ### Panther on Docker Desktop for Windows
 
-**Perquisites:** To run Panther on Windows using Docker Desktop. It will require to install Docker Desktop with WSL(it will install with Docker Desktop) on Windows 10.
-Please follow the link to setup [Docker Desktop](https://docs.docker.com/desktop/windows/install/)
+**Prerequisites:** Install Docker Desktop with WSL(it will install with Docker Desktop) on Windows 10. Please follow the link to setup [Docker Desktop](https://docs.docker.com/desktop/windows/install/)
 
 Step-1: Open command prompt or Windows PowerShell terminal to pull a docker-panther-trial image using command:
  `docker pull prolificspanther/docker-panther-trial`
@@ -95,6 +58,43 @@ Step-8: Set the license file using command `export LM_LICENSE_FILE=/Apps/Prolifi
 Step-9: To run prodev enter command> prodev on CLI terminal and to run prorun with sample app by enter the command>prorun mgmt(Name of panther screen).
 
 Step-:10- To run sample pantherweb application on host browser. Click on "Open in browser". it will redirect to windows default browser. Add URL /PantherDemo/PantherDemo/login.
+
+### Panther Character mode
+
+Step-1: `docker pull prolificspanther/docker-panther-trial`
+
+Step-2: `docker run --name=panther -v <path of license folder on host  machine>:/Apps/ProlificsContainer/prlstdwb553.07/licenses -p8080:8080 -d prolificspanther/docker-panther-trial`
+
+Step-3: `docker exec -ti panther bash`
+
+Step-4: Set the license file using command `export LM_LICENSE_FILE=/Apps/ProlificsContainer/prlstdwb553.07/licenses/license.dat`
+
+Step-5: `Open the Panther Editor using the command > prodev`
+
+Step-6: `To Run a sample Panther client application use command > prorun mgmt (Name of Panther screen) `           
+
+### Panther Motif
+
+**Prerequisites:** To run panther in motif mode. We have to make sure to install (https://x.cygwin.com/) and start the X Server on your windows machine. Also, connect the Linux machine by enabling SSH>X11(Enable X11 forward and enter host machine IP:0.0) using putty. 
+
+Step-1: This step will same as  character mode
+ 
+Step-2: `docker run --name=panther -ti --net=host -e DISPLAY -v /tmp/.X11-unix -v <path of license folder on host  machine>://Apps/ProlificsContainer/prlstdwb553.07/licenses -d prolificspanther/docker-panther-trial`
+
+Step-3: `Enter command>xauth list
+            It will display MIT-MAGIC-COOKIE list as shown in example below. Just copy any one of them.
+            Example: ip-your ip/unix:10  MIT-MAGIC-COOKIE-1  83cce042f30c980a97e6799713e9e3f2`
+
+Step-4: `docker exec -ti panther bash`
+
+Step-5: Set the license file using command `export LM_LICENSE_FILE=/Apps/ProlificsContainer/prlstdwb553.07/licenses/license.dat`
+
+Step-6: `Enter command> xauth add < paste MIT- MAGIC-COOKIE  that we copied before> We can verify using xauth list. It will show the same cookie that we just added.`
+
+Step-7: `Open the Panther Editor in motif using the command>prodev_motif` 
+
+Step 8: `To Run a sample Panther client application in motif use command > prorun_motif mgmt (Name of Panther screen)`  
+
 
 # To access the image from OpenShift
 
