@@ -38,10 +38,10 @@ You should have a valid Panther license on the host machine. Please contact supp
 
 **Prerequisites:** Install Docker Desktop with WSL(Installed with Docker Desktop) on Windows 10. Please follow the link to setup [Docker Desktop](https://docs.docker.com/desktop/windows/install/)
 
-Step-1: Open command prompt or Windows PowerShell terminal to pull the docker-panther-trial image. Use command:
+Step-1: Open a Command Prompt or a Windows PowerShell to pull the docker-panther-trial image. Use the  command:
  `docker pull prolificspanther/docker-panther-trial`
 
-Step-2: Open the Docker Desktop application and the docker-panther-trial  should appear in the image section.
+Step-2: Open your Docker Desktop application and the docker-panther-trial  should appear in the image section.
 
 Step-3: To create and run a container, choose the image click the "Run" button. A configuration dialogue box will open.
 
