@@ -47,7 +47,7 @@ Step-3: To create and run a Panther container, choose the image and click the "R
 
 Step-4: Enter the proper values in fields.
 
-<image here>
+ 
 
 
 Host Path: Path containing your Panther license file 
@@ -55,14 +55,14 @@ Container Path:Must be set to  /Apps/ProlificsContainer/prlstdwb553.07/licenses
 
 Step-5: Click  on Run button and your Panther Container will create and start. It will appear in the Container section.
 
-Step-7: Select the running container and select the icon "OPEN IN BROWSER". Your Windows brower will open and TomCat Apaches Dashboard will appear. Append "/PantherDemo/PantherDemo/login" in the URL and you will see Panther Web 'serving' up a sample Panther login screen.
+Step-7: Select the running container and select the icon "OPEN IN BROWSER". Your Windows brower will open and TomCat Apaches' Dashboard will appear. Append "/PantherDemo/PantherDemo/login" in the URL and you will see Panther Web 'serving' up a sample Panther login screen.
 
 Step-8: To execute the Panther Editor, select the running container and  then choose the select "CLI" icon. Run the command "prodev". If you have trouble  with the Panther license file, set the license file  in the environment using  the command `export LM_LICENSE_FILE=/Apps/ProlificsContainer/prlstdwb553.07/licenses/license.dat`
  NOTE: Do not alter the location of the license file. Once prodev opens you may open the login screen located in screens.lib
  
 
 
-### Panther Character mode
+### Panther Character Mode
  
 **Prerequisites:** Docker engine installed on your Linux server
  
