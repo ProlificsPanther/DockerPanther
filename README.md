@@ -1,5 +1,5 @@
 # docker-panther-trial
-The Docker file can be used to dockerize  your limited files Panther trial edition. Also included are samples of a Panther Docker image  that can  be pulled directly using the docker pull command from [Docker Hub](https://hub.docker.com/repository/docker/prolificspanther/docker-panther-trial).
+This Docker file contains a limited version of Panther. The essential files needed to execute the Panther Editor as well as deploy your Panther Screens to the web are included in this Docker File. Also includee is a Panther Docker image that can be pulled directly using the docker pull command from [Docker Hub](https://hub.docker.com/repository/docker/prolificspanther/docker-panther-trial).
 
 ### Usage
 * Panther Web 5.53
@@ -32,34 +32,33 @@ The Docker file can be used to dockerize  your limited files Panther trial editi
  
  # How to use docker-panther-trial
 
-You should have a valid Panther license on the host machine. Please contact support@prolifics.com for a temporary license. Your Docker Container must be able to access that license file. Instructions provided below
+Before you create a  Panther Container, you must have a valid Panther license on the host machine. Just contact support@prolifics.com for a temporary license. Your Docker Container must be able to access that license file. Instructions provided below
 
 ### Panther on Docker Desktop for Windows
 
 **Prerequisites:** Install Docker Desktop with WSL(Installed with Docker Desktop) on Windows 10. Please follow the link to setup [Docker Desktop](https://docs.docker.com/desktop/windows/install/)
 
-Step-1: Open a Command Prompt or a Windows PowerShell to pull the docker-panther-trial image. Use the  command:
+Step-1: Open a Command Prompt or a Windows PowerShell to pull the Panther image. Use the  command:
  `docker pull prolificspanther/docker-panther-trial`
 
-Step-2: Open your Docker Desktop application and the docker-panther-trial  should appear in the image section.
+Step-2: Open your Docker Desktop application and select "Images" on the left panel. You will see the 'prolificspanther/docker-panther-trial' .
 
-Step-3: To create and run a container, choose the image click the "Run" button. A configuration dialogue box will open.
+Step-3: To create and run a Panther container, choose the image and click the "Run" button. A configuration dialogue box will open.
 
-Step-4: Enter values in the name section(Container name) as well as a local host port to run Panther Web on host machine.
+Step-4: Enter proper values in fields.  . , similar to how  it pprear in the name section(Container name) as well as a local host port to run Panther Web on host machine.
+Host Path: Path containing your Panther license file 
+Container Path:Must be set to  /Apps/ProlificsContainer/PantherTest/License
 
 <image>
 
-Step-5: In the volume section of the Dialogue box, share a host directory with a Container by sharing a path of the local directory in host path field. Enter the patch to the valid Panther license file on host machine and share location(/Apps/ProlificsContainer/PantherTest/License) to get the directory inside a container in Container path field.
+Step-5: Click  on Run button  and your Panther Container will create and start. It will appear  in the Container section.
 
-Step-6: Click  on Run button configuration dialogue box. It will create and start your container. It should show your container with status running in container section.
+Step-7: Select the  running container and select "OPEN IN BROWSER". Your Windows brower will open and TomCat Apaches Dashboard will appear.Append "/PantherDemo/PantherDemo/login" in the URL. Panther Web has not servered  up  your sample Panther  login screen.
 
-Step-7: Select running  container and click on CLI option. It will open a CLI terminal terminal to run Panther in character mode.
-
-Step-8: Set the license file using command `export LM_LICENSE_FILE=/Apps/ProlificsContainer/prlstdwb553.07/licenses/license.dat`
+Step-8: To execute the Panther Editor Set the license file using command `export LM_LICENSE_FILE=/Apps/ProlificsContainer/prlstdwb553.07/licenses/license.dat`
 
 Step-9: To run prodev enter command> prodev on CLI terminal and to run prorun with sample app by enter the command>prorun mgmt(Name of panther screen).
 
-Step-:10- To run sample pantherweb application on host browser. Click on "Open in browser". it will redirect to windows default browser. Add URL /PantherDemo/PantherDemo/login.
 
 ### Panther Character mode
 
