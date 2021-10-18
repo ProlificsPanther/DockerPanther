@@ -64,7 +64,7 @@ Step-8: To execute the Panther Editor, select the running container and  then ch
 
 ### Panther Character mode
  
-**Prerequisites:** Docker engine on your RedHat server
+**Prerequisites:** Docker engine installed on your Linux server
  
 Step-1: `docker pull prolificspanther/docker-panther-trial`
 
