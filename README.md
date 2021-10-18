@@ -1,5 +1,5 @@
 # docker-panther-trial
-This Docker file contains a limited version of Panther. The essential files needed to execute the Panther Editor as well as deploy your Panther Screens to the web are included in this Docker File. Also includee is a Panther Docker image that can be pulled directly using the docker pull command from [Docker Hub](https://hub.docker.com/repository/docker/prolificspanther/docker-panther-trial).
+This Docker file contains a limited version of Panther Editor , Panther Runtime and Panther Web . The essential files required to execute the Panther Editor as well as deploy your Panther Screens to the web are included in this Docker File. Also included is a Panther Docker image that can be pulled directly using the docker pull command from [Docker Hub](https://hub.docker.com/repository/docker/prolificspanther/docker-panther-trial).
 
 ### Usage
 * Panther Web 5.53
@@ -32,7 +32,7 @@ This Docker file contains a limited version of Panther. The essential files need
  
  # How to use docker-panther-trial
 
-Before you create a  Panther Container, you must have a valid Panther license on the host machine. Just contact support@prolifics.com for a temporary license. Your Docker Container must be able to access that license file. Instructions provided below
+Before you create a Panther Container, you must have a valid Panther license on the host machine. Just contact support@prolifics.com for a temporary license. Your Docker Container must be able to access that license file. Instructions provided below
 
 ### Panther on Docker Desktop for Windows
 
@@ -41,21 +41,24 @@ Before you create a  Panther Container, you must have a valid Panther license on
 Step-1: Open a Command Prompt or a Windows PowerShell to pull the Panther image. Use the  command:
  `docker pull prolificspanther/docker-panther-trial`
 
-Step-2: Open your Docker Desktop application and select "Images" on the left panel. You will see the 'prolificspanther/docker-panther-trial' .
+Step-2: Open your Docker Desktop application and select "Images" on the left panel. You will see the 'prolificspanther/docker-panther-trial .
 
 Step-3: To create and run a Panther container, choose the image and click the "Run" button. A configuration dialogue box will open.
 
-Step-4: Enter proper values in fields.  . , similar to how  it pprear in the name section(Container name) as well as a local host port to run Panther Web on host machine.
+Step-4: Enter the proper values in fields.
+
+<image here>
+
+
 Host Path: Path containing your Panther license file 
-Container Path:Must be set to  /Apps/ProlificsContainer/PantherTest/License
+Container Path:Must be set to  /Apps/ProlificsContainer/prlstdwb553.07/licenses
 
-<image>
+Step-5: Click  on Run button and your Panther Container will create and start. It will appear in the Container section.
 
-Step-5: Click  on Run button  and your Panther Container will create and start. It will appear  in the Container section.
+Step-7: Select the running container and select the icon "OPEN IN BROWSER". Your Windows brower will open and TomCat Apaches Dashboard will appear. Append "/PantherDemo/PantherDemo/login" in the URL and you will see Panther Web 'serving' up a sample Panther login screen.
 
-Step-7: Select the running container and select "OPEN IN BROWSER". Your Windows brower will open and TomCat Apaches Dashboard will appear.Append "/PantherDemo/PantherDemo/login" in the URL. Panther Web has not servered  up  your sample Panther  login screen.
-
-Step-8: To execute the Panther Editor , select the running container and select "CLI".  Execute the command "prodev". If you have trouble  with the Panther license file, you have  set the license file  in the env using command `export LM_LICENSE_FILE=/Apps/ProlificsContainer/prlstdwb553.07/licenses/license.dat`  NOTE: Do not alter the location of the license file. Once prodev opens you may open the login screen located in screens.lib
+Step-8: To execute the Panther Editor, select the running container and  then choose the select "CLI" icon. Run the command "prodev". If you have trouble  with the Panther license file, set the license file  in the environment using  the command `export LM_LICENSE_FILE=/Apps/ProlificsContainer/prlstdwb553.07/licenses/license.dat`
+ NOTE: Do not alter the location of the license file. Once prodev opens you may open the login screen located in screens.lib
  
 
 
