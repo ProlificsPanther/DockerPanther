@@ -53,15 +53,16 @@ Container Path:Must be set to  /Apps/ProlificsContainer/PantherTest/License
 
 Step-5: Click  on Run button  and your Panther Container will create and start. It will appear  in the Container section.
 
-Step-7: Select the  running container and select "OPEN IN BROWSER". Your Windows brower will open and TomCat Apaches Dashboard will appear.Append "/PantherDemo/PantherDemo/login" in the URL. Panther Web has not servered  up  your sample Panther  login screen.
+Step-7: Select the running container and select "OPEN IN BROWSER". Your Windows brower will open and TomCat Apaches Dashboard will appear.Append "/PantherDemo/PantherDemo/login" in the URL. Panther Web has not servered  up  your sample Panther  login screen.
 
-Step-8: To execute the Panther Editor Set the license file using command `export LM_LICENSE_FILE=/Apps/ProlificsContainer/prlstdwb553.07/licenses/license.dat`
-
-Step-9: To run prodev enter command> prodev on CLI terminal and to run prorun with sample app by enter the command>prorun mgmt(Name of panther screen).
+Step-8: To execute the Panther Editor , select the running container and select "CLI".  Execute the command "prodev". If you have trouble  with the Panther license file, you have  set the license file  in the env using command `export LM_LICENSE_FILE=/Apps/ProlificsContainer/prlstdwb553.07/licenses/license.dat`  NOTE: Do not alter the location of the license file. Once prodev opens you may open the login screen located in screens.lib
+ 
 
 
 ### Panther Character mode
-
+ 
+**Prerequisites:** Docker engine on your RedHat server
+ 
 Step-1: `docker pull prolificspanther/docker-panther-trial`
 
 Step-2: `docker run --name=panther -v <path of license folder on host  machine>:/Apps/ProlificsContainer/prlstdwb553.07/licenses -p8080:8080 -d prolificspanther/docker-panther-trial`
@@ -76,9 +77,9 @@ Step-6: `To Run a sample Panther client application use command > prorun mgmt (N
 
 ### Panther Motif
 
-**Prerequisites:** To run panther in motif mode. We have to make sure to install (https://x.cygwin.com/) and start the X Server on your windows machine. Also, connect the Linux machine by enabling SSH>X11(Enable X11 forward and enter host machine IP:0.0) using putty. 
+**Prerequisites:** To run Panther in Motif,  install (https://x.cygwin.com/) and start the X Server on your Windows machine. Also, connect to the Linux machine by enabling SSH>X11(Enable X11 forward and enter host machine IP:0.0) using putty. 
 
-Step-1: This step will same as  character mode
+Step-1:  `docker pull prolificspanther/docker-panther-trial`
  
 Step-2: `docker run --name=panther -ti --net=host -e DISPLAY -v /tmp/.X11-unix -v <path of license folder on host  machine>://Apps/ProlificsContainer/prlstdwb553.07/licenses -d prolificspanther/docker-panther-trial`
 
