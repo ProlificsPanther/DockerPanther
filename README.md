@@ -47,7 +47,7 @@ Step-3: To create and run a Panther container, choose the image and click the "R
 
 Step-4: Enter the proper values in fields.
 
-![](docker1.png)
+![](docker.PNG)
 
 Host Path: Path containing your Panther license file 
 Container Path:Must be set to  /Apps/ProlificsContainer/prlstdwb553.07/licenses
