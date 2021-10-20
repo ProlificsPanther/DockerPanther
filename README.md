@@ -1,5 +1,5 @@
 # docker-panther-trial
-This Docker file contains a limited version of the Panther Editor , Panther Runtime and Panther Web software . The essential files required to execute the Panther Editor as well as deploy your Panther Screens to the web are included in this Docker File. Also included is a Panther Docker image that can be pulled directly using the docker pull command  from [Docker Hub](https://hub.docker.com/repository/docker/prolificspanther/docker-panther-trial).
+This Docker file contains a limited version of the Panther Editor , Panther Runtime and Panther Web software . The essential files required to execute the Panther Editor as well as deploy your Panther Screens to the web are included in this Docker File. Also included is a Panther Docker image that can be pulled directly using the docker pull command  from [Docker Hub](https://hub.docker.com/repository/docker/prolificspanther/docker-panther-trial).dd
 
 ### Usage
 * Panther Web 5.53
