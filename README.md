@@ -56,9 +56,7 @@ Step-5: Click  on Run button and your Panther Container will create and start. I
 
 Step-7: Select the running container and select the icon "OPEN IN BROWSER". Your Windows brower will open and TomCat Apaches' Dashboard will appear. Append "/PantherDemo/PantherDemo/login" in the URL and you will see Panther Web 'serving' up a sample Panther login screen.
 
-Step-8: To execute the Panther Editor, select the running container and  then choose the select "CLI" icon. Run the command "prodev". If you have trouble  with the Panther license file, set the license file  in the environment using  the command `export LM_LICENSE_FILE=/Apps/ProlificsContainer/prlstdwb553.07/licenses/license.dat`
- NOTE: Do not alter the location of the license file. Once prodev opens you may open the login screen located in screens.lib
- 
+Step-8: To execute the Panther Editor, select the running container and  then choose the select "CLI" icon. Run the command "prodev". 
 
 
 ### Panther Character Mode
@@ -71,11 +69,9 @@ Step-2: `docker run --name=panther -v <path of license folder on host  machine>:
 
 Step-3: `docker exec -ti panther bash`
 
-Step-4: Set the license file using command `export LM_LICENSE_FILE=/Apps/ProlificsContainer/prlstdwb553.07/licenses/license.dat`
+Step-4: `Open the Panther Editor using the command > prodev`
 
-Step-5: `Open the Panther Editor using the command > prodev`
-
-Step-6: `To Run a sample Panther client application use command > prorun mgmt (Name of Panther screen) `           
+Step-5: `To Run a sample Panther client application use command > prorun mgmt (Name of Panther screen) `           
 
 ### Panther Motif
 
@@ -92,13 +88,12 @@ Step-3: Next  enter the command to run a graphical application on Linux (Panther
 
 Step-4: `docker exec -ti panther bash`  to run a new command  in a running command.  Notice  the prompt has changed to name of your contained 
 
-Step-5: Set the license file using command `export LM_LICENSE_FILE=/Apps/ProlificsContainer/prlstdwb553.07/licenses/license.dat`
+Step-5: Enter the  command
+        'xauth add < paste MIT- MAGIC-COOKIE  used previously> We can verify using xauth list. It will show the same cookie that we just added.`
 
-Step-6: `Enter command> xauth add < paste MIT- MAGIC-COOKIE  that we copied before> We can verify using xauth list. It will show the same cookie that we just added.`
+Step-6: `Open the Panther Editor in motif using the command>prodev_motif` 
 
-Step-7: `Open the Panther Editor in motif using the command>prodev_motif` 
-
-Step 8: `To Run a sample Panther client application in motif use command > prorun_motif mgmt (Name of Panther screen)`  
+Step 7: `To Run a sample Panther client application in motif use command > prorun_motif mgmt (Name of Panther screen)`  
 
 
 # To access the image from OpenShift
@@ -120,6 +115,9 @@ Step-7: Run the command( to test prodev): > "prodev"
 Step-8: Run the command (to test sample Panther client app):>prorun mgmt (Name of Panther screen).    
 
 ## License
+
+If you have trouble  with the Panther license file, set the license file  in the environment using  the command `export LM_LICENSE_FILE=/Apps/ProlificsContainer/prlstdwb553.07/licenses/license.dat`
+NOTE: Do not alter the location of the license file. Once prodev opens you may open the login screen located in screens.lib
 
 For Panther Cloud License, contact support@prolifics.com
 
