@@ -75,25 +75,27 @@ Step-5: `To Run a sample Panther client application use command > prorun mgmt (N
 
 ### Panther Motif
 
-**Prerequisites:** Docker engine installed on your Linux server.To run Panther in Motif,  install (https://x.cygwin.com/) and start the X Server on your Windows machine. Also, connect to the Linux machine by enabling SSH>X11(Enable X11 forward and enter host machine IP:0.0) using putty. 
+**Prerequisites:** Docker engine installed on your Linux server.To run Panther in Motif,  install (https://x.cygwin.com/) and start the X Server on your Windows machine. If using, please enable SSH>X11(Enable X11 forwarding and enter host machine IP:0.0). 
 
 Step-1: `docker pull prolificspanther/docker-panther-trial` to pull the Panther image. 
  
-Step-2: `docker run --name=panther -ti --net=host -e DISPLAY -v /tmp/.X11-unix -v <path of license folder on host  machine>://Apps/ProlificsContainer/prlstdwb553.07/licenses -d prolificspanther/docker-panther-trial` .The run command  will create a Panther container.
+Step-2: `docker run --name=panther553 -ti --net=host -e DISPLAY -v /tmp/.X11-unix -v <path of license folder on host  machine>://Apps/ProlificsContainer/prlstdwb553.07/licenses -d prolificspanther/docker-panther-trial` .The run command  will create a container named 'panther553' .
 
 Step-3: Next  enter the command to run a graphical application on Linux (Panther Web application in  your browser)
         'xauth list' 
         It will display a  MIT-MAGIC-COOKIE list as shown in the example below. Just copy any line  and run it
-        Example: ip-your ip/unix:10  MIT-MAGIC-COOKIE-1  83cce042f30c980a97e6799713e9e3f2`
+        Example:'ip-your ip/unix:10  MIT-MAGIC-COOKIE-1  83cce042f30c980a97e6799713e9e3f2`
 
-Step-4: `docker exec -ti panther bash`  to run a new command  in a running command.  Notice  the prompt has changed to name of your contained 
+Step-4: `docker exec -ti panther553 bash`  to run a new command  in a running command.  Notice  the prompt has changed to name of your contained 
 
 Step-5: Enter the  command
-        'xauth add < paste MIT- MAGIC-COOKIE  used previously> We can verify using xauth list. It will show the same cookie that we just added.`
+        'xauth add <paste MIT- MAGIC-COOKIE  used previously> <br> We can verify that is was added using 'xauth list' command. 
+        
+Step-6: Open the Panther Editor in Motif using the command
+        'prodev_motif` 
 
-Step-6: `Open the Panther Editor in motif using the command>prodev_motif` 
-
-Step 7: `To Run a sample Panther client application in motif use command > prorun_motif mgmt (Name of Panther screen)`  
+Step 7: To Run a sample Panther client application in motif use command 
+        'prorun_motif mgmt (Name of Panther screen)`  
 
 
 # To access the image from OpenShift
