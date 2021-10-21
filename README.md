@@ -49,7 +49,7 @@ Step-4: Enter the proper values in fields.
 
 ![](docker.PNG)
 
-Host Path: Path containing your Panther license file 
+Host Path: Path of license folder on host  machine
 Container Path:Must be set to  /Apps/ProlificsContainer/prlstdwb553.07/licenses
 
 Step-5: Click  on Run button and your Panther Container will create and start. It will appear in the Container section.
@@ -65,9 +65,9 @@ Step-8: To execute the Panther Editor, select the running container and  then ch
  
 **Prerequisites:** Docker engine installed on your Linux server
  
-Step-1: `docker pull prolificspanther/docker-panther-trial`
+Step-1: `docker pull prolificspanther/docker-panther-trial` to pull the Panther image.
 
-Step-2: `docker run --name=panther -v <path of license folder on host  machine>:/Apps/ProlificsContainer/prlstdwb553.07/licenses -p8080:8080 -d prolificspanther/docker-panther-trial`
+Step-2: `docker run --name=panther -v <path of license folder on host  machine>:/Apps/ProlificsContainer/prlstdwb553.07/licenses -p8080:8080 -d prolificspanther/docker-panther-trial` . The run command  will create a Panther container.
 
 Step-3: `docker exec -ti panther bash`
 
@@ -79,17 +79,18 @@ Step-6: `To Run a sample Panther client application use command > prorun mgmt (N
 
 ### Panther Motif
 
-**Prerequisites:** To run Panther in Motif,  install (https://x.cygwin.com/) and start the X Server on your Windows machine. Also, connect to the Linux machine by enabling SSH>X11(Enable X11 forward and enter host machine IP:0.0) using putty. 
+**Prerequisites:** Docker engine installed on your Linux server.To run Panther in Motif,  install (https://x.cygwin.com/) and start the X Server on your Windows machine. Also, connect to the Linux machine by enabling SSH>X11(Enable X11 forward and enter host machine IP:0.0) using putty. 
 
-Step-1:  `docker pull prolificspanther/docker-panther-trial`
+Step-1: `docker pull prolificspanther/docker-panther-trial` to pull the Panther image. 
  
-Step-2: `docker run --name=panther -ti --net=host -e DISPLAY -v /tmp/.X11-unix -v <path of license folder on host  machine>://Apps/ProlificsContainer/prlstdwb553.07/licenses -d prolificspanther/docker-panther-trial`
+Step-2: `docker run --name=panther -ti --net=host -e DISPLAY -v /tmp/.X11-unix -v <path of license folder on host  machine>://Apps/ProlificsContainer/prlstdwb553.07/licenses -d prolificspanther/docker-panther-trial` .The run command  will create a Panther container.
 
-Step-3: `Enter command>xauth list
-            It will display MIT-MAGIC-COOKIE list as shown in example below. Just copy any one of them.
-            Example: ip-your ip/unix:10  MIT-MAGIC-COOKIE-1  83cce042f30c980a97e6799713e9e3f2`
+Step-3: Next  enter the command to run a graphical application on Linux (Panther Web application in  your browser)
+        'xauth list' 
+        It will display a  MIT-MAGIC-COOKIE list as shown in the example below. Just copy any line  and run it
+        Example: ip-your ip/unix:10  MIT-MAGIC-COOKIE-1  83cce042f30c980a97e6799713e9e3f2`
 
-Step-4: `docker exec -ti panther bash`
+Step-4: `docker exec -ti panther bash`  to run a new command  in a running command.  Notice  the prompt has changed to name of your contained 
 
 Step-5: Set the license file using command `export LM_LICENSE_FILE=/Apps/ProlificsContainer/prlstdwb553.07/licenses/license.dat`
 
