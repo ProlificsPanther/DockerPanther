@@ -85,6 +85,8 @@ Step-3: Next  enter the command to run a graphical application on Linux (Panther
         `xauth list` <br/>
         It will display a  MIT-MAGIC-COOKIE list as shown in the example below. Just copy any line  and run it . <br/>
         Example:`ip-your ip/unix:10  MIT-MAGIC-COOKIE-1  83cce042f30c980a97e6799713e9e3f2`
+        
+        ![](dockermotif.png)
 
 Step-4: `docker exec -ti panther553 bash`  to run a new command  in a running command.  Notice  the prompt has changed to name of your container.
 
