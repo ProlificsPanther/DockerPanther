@@ -81,21 +81,21 @@ Step-1: `docker pull prolificspanther/docker-panther-trial` to pull the Panther 
  
 Step-2: `docker run --name=panther553 -ti --net=host -e DISPLAY -v /tmp/.X11-unix -v <path of license folder on host  machine>://Apps/ProlificsContainer/prlstdwb553.07/licenses -d prolificspanther/docker-panther-trial` .The run command  will create a container named 'panther553' .
 
-Step-3: Next  enter the command to run a graphical application on Linux (Panther Web application in  your browser)
-        'xauth list' <br>
-        It will display a  MIT-MAGIC-COOKIE list as shown in the example below. Just copy any line  and run it . <br>
-        Example:'ip-your ip/unix:10  MIT-MAGIC-COOKIE-1  83cce042f30c980a97e6799713e9e3f2`
+Step-3: Next  enter the command to run a graphical application on Linux (Panther Web application in  your browser)<br/>
+        `xauth list` <br/>
+        It will display a  MIT-MAGIC-COOKIE list as shown in the example below. Just copy any line  and run it . <br/>
+        Example:`ip-your ip/unix:10  MIT-MAGIC-COOKIE-1  83cce042f30c980a97e6799713e9e3f2`
 
-Step-4: `docker exec -ti panther553 bash`  to run a new command  in a running command.  Notice  the prompt has changed to name of your contained 
+Step-4: `docker exec -ti panther553 bash`  to run a new command  in a running command.  Notice  the prompt has changed to name of your container.
 
 Step-5: Enter the  command
-        'xauth add <paste MIT- MAGIC-COOKIE  used previously> <br>'. <br> We can verify that is was added using 'xauth list' command. 
+        `xauth add <paste MIT- MAGIC-COOKIE  used previously>` <br/> We can verify that it was added using the `xauth list` command. 
         
-Step-6: Open the Panther Editor in Motif using the command
-        'prodev_motif` 
+Step-6: Open the Panther Editor in Motif with the command
+        `prodev_motif` 
 
-Step 7: To Run a sample Panther client application in motif use command <br>
-        'prorun_motif mgmt (Name of Panther screen)`   <br>
+Step 7: To run a sample Panther client application in Motif use command <br/>
+        `prorun_motif mgmt (screen name)`   <br/>
 
 
 # To access the image from OpenShift
