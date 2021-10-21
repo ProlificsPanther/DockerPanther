@@ -71,7 +71,7 @@ Step-3: `docker exec -ti panther bash`
 
 Step-4: `Open the Panther Editor using the command > prodev`
 
-Step-5: `To Run a sample Panther client application use command > prorun mgmt (Name of Panther screen) `           
+Step-5: `To Run a sample Panther client application use command > prorun mgmt (screen name) `           
 
 ### Panther Motif
 
@@ -82,20 +82,20 @@ Step-1: `docker pull prolificspanther/docker-panther-trial` to pull the Panther 
 Step-2: `docker run --name=panther553 -ti --net=host -e DISPLAY -v /tmp/.X11-unix -v <path of license folder on host  machine>://Apps/ProlificsContainer/prlstdwb553.07/licenses -d prolificspanther/docker-panther-trial` .The run command  will create a container named 'panther553' .
 
 Step-3: Next  enter the command to run a graphical application on Linux (Panther Web application in  your browser)
-        'xauth list' 
-        It will display a  MIT-MAGIC-COOKIE list as shown in the example below. Just copy any line  and run it
+        'xauth list' <br>
+        It will display a  MIT-MAGIC-COOKIE list as shown in the example below. Just copy any line  and run it . <br>
         Example:'ip-your ip/unix:10  MIT-MAGIC-COOKIE-1  83cce042f30c980a97e6799713e9e3f2`
 
 Step-4: `docker exec -ti panther553 bash`  to run a new command  in a running command.  Notice  the prompt has changed to name of your contained 
 
 Step-5: Enter the  command
-        'xauth add <paste MIT- MAGIC-COOKIE  used previously> <br> We can verify that is was added using 'xauth list' command. 
+        'xauth add <paste MIT- MAGIC-COOKIE  used previously> <br>'. <br> We can verify that is was added using 'xauth list' command. 
         
 Step-6: Open the Panther Editor in Motif using the command
         'prodev_motif` 
 
-Step 7: To Run a sample Panther client application in motif use command 
-        'prorun_motif mgmt (Name of Panther screen)`  
+Step 7: To Run a sample Panther client application in motif use command <br>
+        'prorun_motif mgmt (Name of Panther screen)`   <br>
 
 
 # To access the image from OpenShift
