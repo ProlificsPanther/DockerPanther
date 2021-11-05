@@ -54,9 +54,9 @@ Container Path:Must be set to  /Apps/ProlificsContainer/prlstdwb553.07/licenses
 
 Step-5: Click  on Run button and your Panther Container will create and start. It will appear in the Container section.
 
-Step-7: Select the running container and select the icon "OPEN IN BROWSER". Your Windows brower will open and TomCat Apaches' Dashboard will appear. Append "/PantherDemo/PantherDemo/login" in the URL and you will see Panther Web 'serving' up a sample Panther login screen.
+Step-7: Select the running container and the icon "OPEN IN BROWSER". Your Windows brower will open and TomCat Apaches' Dashboard will appear. Append "/PantherDemo/PantherDemo/login" in the URL and you will see Panther Web 'serving' up a sample Panther login screen.
 
-Step-8: To execute the Panther Editor, select the running container and  then choose the select "CLI" icon. Run the command "prodev". 
+Step-8: To execute the Panther Editor, select the running container and choose the select "CLI" icon. Run the command "prodev". 
 
 
 ### Panther Character Mode
