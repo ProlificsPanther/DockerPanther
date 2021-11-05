@@ -41,7 +41,7 @@ Before you create a Panther Container, you must have a valid Panther license on 
 Step-1: Open a Command Prompt or a Windows PowerShell to pull the Panther image. Use the  command:
  `docker pull prolificspanther/docker-panther-trial`
 
-Step-2: Open your Docker Desktop application and select "Images" on the left panel. You will see the 'prolificspanther/docker-panther-trial .
+Step-2: Open your Docker Desktop application and select "Images" on the left panel. You will see the 'prolificspanther/docker-panther-trial' image .
 
 Step-3: To create and run a Panther container, choose the image and click the "Run" button. A configuration dialogue box will open.
 
