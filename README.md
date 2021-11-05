@@ -69,9 +69,9 @@ Step-2: `docker run --name=panther -v <path of license folder on host  machine>:
 
 Step-3: `docker exec -ti panther bash`
 
-Step-4: `Open the Panther Editor using the command > prodev`
+Step-4:  Open the Panther Editor using the command `> prodev`
 
-Step-5: `To Run a sample Panther client application use command > prorun mgmt (screen name) `           
+Step-5:  To Run a sample Panther client application use command `> prorun mgmt (screen name) `           
 
 ### Panther Motif
 
