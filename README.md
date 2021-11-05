@@ -8,12 +8,12 @@ This Docker file contains a limited version of the Panther Editor , Panther Runt
 # Prerequisites: (Required)
   * Install Docker Engine from  https://docs.docker.com/get-docker/ 
   
-  Provided in Container
+  Included in  our container
   * Panther 5.53
   * OpenJDK 8
   * Linux Server(Ubuntu 20.04)
-  * Tomcat.zip(included)
-  * docker-entrypoint.sh (keeps Catalina and Panther App running)
+  * Tomcat.zip 
+  * docker-entrypoint.sh (keeps Catalina and Panther Application running)
   
  # Prerequisites: (Optional)
    Enable port 8080 from your host machine to access the Panther Web application from other clients.
