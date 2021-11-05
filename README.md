@@ -8,7 +8,7 @@ Docker is an open platform that makes it easier to create, deploy, and run appli
 [Docker Playlist](https://www.youtube.com/playlist?list=PLqs5lOxsEMidwKXCOec5d_f6UXsZtuYhf)
 
 # What this repository contains
-This repository contains one branch; docker-panther-trial which consists of a sample dockerfile from which you can run Panther Motif, Panther Character Mode or Panther Web inside a Docker Container. These docker instances of Panther are limited and do not contain all Panther features. You may request a 45 day license file from support@prolifics.com.
+This repository contains one branch; docker-panther-trial which consists of a sample dockerfile from which you can run Panther Motif, Panther Character Mode or Panther Web inside a Docker Container. These docker instances of Panther are limited and do not contain all Panther features. Please request a 45 day license file from support@prolifics.com.
  
 # What this repository contains
 ![](BranchInfo.PNG)
