@@ -16,7 +16,7 @@ This Docker file contains a limited version of the Panther Editor , Panther Runt
   * docker-entrypoint.sh (keeps Catalina and Panther Application running)
   
  # Prerequisites: (Optional)
-   Enable port 8080 from your host machine to access the Panther Web application from other clients.
+   Enable an available port like 8080 from your host machine to access the Panther Web application from other clients.
     
  # Download the Panther Docker image:
     
