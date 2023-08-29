@@ -8,18 +8,16 @@ Our Panther Docker file (Dockerfile_ contains  the required files to setup and  
 # Prerequisites: (Required)
   * Install Docker Engine from  https://docs.docker.com/get-docker/ 
   
-  Included in  our container
+  Included in our Panther Web Docker Container
   * Panther 5.54
   * OpenJDK 8
   * Linux Server(Ubuntu 20.04)
   * Tomcat.zip 
-  * docker-entrypoint.sh (keeps Catalina and Panther Application running)
+  * docker-entrypoint.sh 
   
  # Prerequisites:  
-   Enable an available port like 8080 from your host machine to access the Panther Web application from other clients. Installation of 
-    
- # Download the Panther Docker image:
-    
+   Enable an available port like 8080 from your host machine to access the Panther Web application from other clients.      
+ # Pull the Panther Docker Image:
    docker pull prolificspanther/docker-panther-trial
   
  # Contents of the container:
@@ -33,21 +31,22 @@ Our Panther Docker file (Dockerfile_ contains  the required files to setup and  
 
 Before you create a Panther Container, you must have a valid Panther license on the host machine. Just contact support@prolifics.com for a temporary license. Your Docker Container must be able to access that license file. Instructions provided below
 
-### Panther Web
+### Panther Web Docker Image
  
 **Prerequisites:** Docker engine installed on your Linux server
  
-Step-1: `docker pull prolificspanther/docker-panther-trial` to pull the Panther image.
+Step-1: `docker pull prolificspanther/docker-panther-trial` to pull the Panther Web Image.
 
-Step-2: `docker run --name=panther -v <path of license folder on host  machine>:/Apps/ProlificsContainer/prlstdwb553.07/licenses -p8080:8080 -d prolificspanther/docker-panther-trial` . The run command  will create a Panther container.
+Step-2: `docker run --name=panther -v <path of license folder on host  machine>:/Apps/ProlificsContainer/prlstdwb553.07/licenses -p8080:8080 -d prolificspanther/docker-panther-trial` . The run command  will create a Panther Web container.
 
 Step-3: `docker exec -ti panther bash`
 
-Step-4:  Open the Panther Editor using the command `> prodev`
+Step-4:  Access sample screen from brower http://......             
 
-Step-5:  To Run a sample Panther client application use command `> prorun mgmt (screen name) `           
-
-To rebuild the  Panther Web Docker image, you will need  Panther Web 5.54  and Apache-Tomcat installed
+### Rebuild Panther Web Docker Image
+To rebuild the Panther Web Docker Image you may use the included DockerFile.
+Required software : Panther Web 5.54 &  Apache-Tomcat ( included in repo for your convinience)
+ 
 
 ## License
 
@@ -70,4 +69,4 @@ You are invited to contribute new features, fixes, or updates, large or small; w
 
 Before you begin to code, we recommend discussing your plans through a [GitHub issue](https://github.com/ProlificsPanther/Docker-Panther/issues), especially for more ambitious contributions. This gives other contributors a chance to point you in the right direction, give you feedback on your design, and help you find out if someone else is working on the same thing.
 
-Read our Documentation [here](https://docs.prolifics.com)
+Read our Panther Documentation [here](https://docs.prolifics.com)
