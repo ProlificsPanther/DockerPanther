@@ -12,7 +12,7 @@ Our Panther Docker file (Dockerfile) contains the required files to setup and  r
    Enable an available port like 8080 from your host machine to access the Panther Web application from other clients.   
    
  # Pull the Panther Docker Image:
-   docker pull prolificspanther/docker-panther-trial
+   `docker pull prolificspanther/docker-panther-trial`
   
  # Contents of the container:
  * Ubuntu 22.04
