@@ -57,7 +57,8 @@ Required software : Panther Web 5.54 & Apache-Tomcat (included in repo for your 
 ## License
 
 If you have trouble  with the Panther license file, set the license file in the environment using  the command `export LM_LICENSE_FILE=/Apps/ProlificsContainer/prlwb554.07/licenses/license.dat`
-NOTE: Do not alter the location of the license file.
+
+Note: Do not alter the location of the license file.
 
 For Panther Web 5.54 License, contact support@prolifics.com
 
