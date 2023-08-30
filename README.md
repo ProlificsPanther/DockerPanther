@@ -34,19 +34,20 @@ Step-1: `docker pull prolificspanther/docker-panther-trial` to pull the Panther 
 
 Step-2: `docker run --name=pantherweb -p8080:8080 -d prolificspanther/docker-panther-trial`  The run command  will create a Panther Web container.
 
-name=pantherweb (name of the container, you can leave it and docker will specify a name by itself but it’s recommended to give a name as it will be required in the next command itself).
--p8080:8080 (first 8080 is the external port which will correspond to your “EXPOSE” command and later 8080 will correspond to the port 8080 which is setup in your Tomcat configuration).
--d (detached) (as we’re not entering the container, we’re just creating it right now).
-docker-panther-trial (the name of the image)
+* name=pantherweb (name of the container, you can leave it and docker will specify a name by itself but it’s recommended to give a name as it will be required in the next command itself).
+* -p8080:8080 (first 8080 is the external port which will correspond to your “EXPOSE” command and later 8080 will correspond to the port 8080 which is setup in your Tomcat configuration).
+* -d (detached) (as we’re not entering the container, we’re just creating it right now).
+* docker-panther-trial (the name of the image)
 
 Step-3: `docker exec -ti <container-id> /bin/bash` to execute and enter into the container.
-exec (Execute)
--ti (Terminal Interactive)
-<container-id> (we can check the container-id using the command `docker ps` or `docker container ls -l` command)
-/bin/bash (the kind of shell you want to create for entering into the container)
 
-Step-4:  Access sample screen from the browser <Public IP of the machine>:8080/PantherDemo/PantherDemo/greeting     
-Note:-  Replace 8080 with the port that you’re using with “-p” in first position.
+* exec (Execute)
+* -ti (Terminal Interactive)
+* <container-id> (we can check the container-id using the command `docker ps` or `docker container ls -l` command)
+* /bin/bash (the kind of shell you want to create for entering into the container)
+
+Step-4:  Access sample screen from the browser `<Public IP of the machine>:8080/PantherDemo/PantherDemo/greeting`    
+Note:- Replace 8080 with the port that you’re using with “-p” in first position.
 
 ### Rebuild Panther Web Docker Image
 
