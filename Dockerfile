@@ -1,105 +1,97 @@
-# Setting the base OS
+#Copyright © 2021, 2023 Prolifics Inc. All Rights Reserved.
+
+#Setting the base OS
 FROM ubuntu
 
-# Name of Creator
-LABEL Author="Panther Support"
+#Name of Creator
+LABEL Author="Panther Support 2023"
 LABEL Corporation="Prolifics Inc."
 
-# Setting up JDK
+#Set up Working Dir
 RUN mkdir -p /Apps/ProlificsContainer
 WORKDIR /Apps/ProlificsContainer
 
-# Install OpenJDK-8
+# Install OpenJDK-8 (required for Apache-Tomcat)
 RUN apt-get update && \
-    apt-get install -y openjdk-8-jdk && \
-    apt-get install -y ant && \
-    apt-get clean;
+  apt-get install -y openjdk-8-jdk && \
+  apt-get install -y ant && \
+  apt-get clean;
 
-# Fix certificate issues
+#Fix JDK certificate issues
 RUN apt-get update && \
-    apt-get install ca-certificates-java && \
-    apt-get clean && \
-    update-ca-certificates -f;
+   apt-get install ca-certificates-java && \
+   apt-get clean && \
+   update-ca-certificates -f;
 ENV SMJAVALIBRARY=/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/server/libjvm.so
 
-# Install libjpeg.so.62
-RUN apt-get -y update
-RUN apt-get install libjpeg62
-
-# Install xauth
-RUN apt-get -y update
-RUN apt-get -y install xauth
-
-#  install openmotif
-RUN apt-get -y update
-RUN apt-get install -y libmotif-dev
-
-# install openssh
-RUN apt-get -y update
-RUN apt-get -y install openssh-server
-RUN chmod -R 0777 /etc/ssh
-
-# install iputils
-RUN apt-get -y update
-RUN apt-get -y install iputils-ping
-
-# install telnet
-RUN apt-get -y update
-RUN apt-get -y install telnet
-
-# Setup JAVA_HOME -- useful for docker commandline
-ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64/
+#Setup JAVA_HOME 
+ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
 RUN export JAVA_HOME
 
-# Unpacking Panther
-RUN mkdir -p /Apps/ProlificsContainer/prlstdwb553.07
-COPY prlstdwb553.07 /Apps/ProlificsContainer/prlstdwb553.07
-
-# Unpacking Panther and creating space for logs
-RUN mkdir -p /Apps/ProlificsContainer/PantherTest
-RUN mkdir -p /Apps/ProlificsContainer/PantherTest/error
-
-# Setting and installing Apache Tomcat
+#Setup Apache Tomcat and Copy files from local Apache-Tomcat installation
 RUN mkdir -p /Apps/ProlificsContainer/Tomcat
 ENV CATALINA_HOME=/Apps/ProlificsContainer/Tomcat
 COPY apache-tomcat-8.5.33 /Apps/ProlificsContainer/Tomcat
 
-# Configuring Panther Servlet
+#Create required Panther distribution folders
+RUN mkdir -p /Apps/ProlificsContainer/prlwb554.07
+RUN mkdir -p /Apps/ProlificsContainer/prlwb554.07/util
+RUN mkdir -p /Apps/ProlificsContainer/prlwb554.07/config
+RUN mkdir -p /Apps/ProlificsContainer/prlwb554.07/servlet
+RUN mkdir -p /Apps/ProlificsContainer/prlwb554.07/licenses
+RUN mkdir -p /Apps/ProlificsContainer/prlwb554.07/lib
+#Copy required distribution files from local Panther 5.54 Web installation
+COPY prlstdwb554.07/util /Apps/ProlificsContainer/prlwb554.07/util
+COPY prlstdwb554.07/config /Apps/ProlificsContainer/prlwb554.07/config
+COPY prlstdwb554.07/servlet /Apps/ProlificsContainer/prlwb554.07/servlet
+COPY prlstdwb554.07/lib /Apps/ProlificsContainer/prlwb554.07/lib
+
+#Please obtain a current Panther license file from support@prolifics.com
+COPY license.dat /Apps/ProlificsContainer/prlwb554.07/licenses
+
+#Create log files etc
+RUN mkdir -p /Apps/ProlificsContainer/PantherDemo
+RUN mkdir -p /Apps/ProlificsContainer/PantherDemo/logs
+
+#Set up Panther Web 5.54 environment 
+ENV SMBASE=/Apps/ProlificsContainer/prlwb554.07
+ENV PATH=$SMBASE/util:$SMBASE/config:${CATALINA_HOME}/bin:$PATH
+ENV SMPATH=$SMBASE/util:$SMBASE/config
+ENV SMVARS=$SMBASE/config/smvars.bin
+#project.lib is located in /PantherDemo - contains Panther screens
+COPY project.lib /Apps/ProlificsContainer/PantherDemo
+ENV SMFLIBS=/Apps/ProlificsContainer/PantherDemo/project.lib
+ENV LM_LICENSE_FILE=$SMBASE/licenses/license.dat
+ENV LD_LIBRARY_PATH=$SMBASE/lib:/usr/lib64:/lib64:/usr/lib/x86_64-linux-gnu
+
+#Create proweb user and configure Panther Web 5.54
 RUN useradd -ms /bin/bash proweb
 ENV HOME=/home/proweb
+RUN chmod -R 0777 /home
+RUN chmod -R 0777 /home/proweb
 RUN mkdir -p ${HOME}/ini
 COPY PantherDemo.war ${CATALINA_HOME}/webapps
 COPY PantherDemo.ini ${HOME}/ini
-RUN chmod -R 0777 /home
-RUN chmod -R 0777 /home/proweb
- 
-# Setting up environment for Panther Web
-ENV SMBASE=/Apps/ProlificsContainer/prlstdwb553.07
-ENV PATH=$SMBASE/util:$SMBASE/config:${CATALINA_HOME}/bin:$SMBASE/servlet:$PATH
-ENV SMPATH=$SMBASE/util:$SMBASE/config
-ENV SMVARS=$SMBASE/config/smvars.bin
-ENV SMFLIBS=$SMBASE/util/mgmt.lib:$SMBASE/util/screens.lib
-ENV LD_LIBRARY_PATH=$SMBASE/lib:/usr/lib64:/lib64:/usr/lib/x86_64-linux-gnu
 
-# Starting the app and keeping the container running
+#Install libjpegso.62 required for Panther Web
+RUN apt-get -y update && \
+   apt-get install libjpeg62
+
+#Copy Docker-EntryPoint file to working dir 
 COPY ./docker-entrypoint.sh /
 
-# Resolving Possible permission issues
+#Resolve possible permission issues
 RUN chmod -R 0777 /Apps/ProlificsContainer
 
-# Setting the landing point in the container
-WORKDIR /Apps/ProlificsContainer/PantherTest
+#Set working dir for the ProlificsContainer
+WORKDIR /Apps/ProlificsContainer/PantherDemo
 
-# Expose the ports
+#Expose the required ports
 EXPOSE 8080
-ENV DISPLAY=localhost:10.0
-#CMD /usr/bin/firefox
 
-# Setting the user
+#Set proweb user 
 USER proweb
 ENV SMUSER=proweb
-ENV SMTERM=xterm
-#ENV SMTERM=xtermutf8
-ENTRYPOINT ["/docker-entrypoint.sh"]
 
-#Copyright © 2021 Prolifics Inc. All Rights Reserved.
+#Run docker-entrypoint script
+ENTRYPOINT ["/docker-entrypoint.sh"]
