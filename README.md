@@ -9,7 +9,8 @@ Our Panther Docker file (Dockerfile) contains the required files to setup and  r
 * Install Docker Engine from  https://docs.docker.com/get-docker/ 
   
  # Prerequisites:  
-   Enable an available port like 8080 from your host machine to access the Panther Web application from other clients.   
+  * The Prerequiste to run the dockerfile is to make sure you have apache-tomcat & Panther web installed.
+  * Enable an available port like 8080 from your host machine to access the Panther Web application from other clients.   
    
  # Pull the Panther Docker Image:
    `docker pull prolificspanther/docker-panther-trial`
